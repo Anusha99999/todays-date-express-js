@@ -1,7 +1,23 @@
 const express = require("express");
+
+
+
 const app = express();
-app.get("/date", (request, response) => {
-  const date = new Date();
-  response.send(`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`);
+
+
+
+app.get("/", (request, response) => {
+
+  const dateTime = new Date();
+
+  response.send(
+
+    `${dateTime.getDate()}-${dateTime.getMonth() + 1}-${dateTime.getFullYear()}`
+
+  );
+
 });
+
+
+
 module.exports = app;
